@@ -8,29 +8,69 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="{% static 'js/option_check.js' %}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'kuing.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/option_click.css' %}">
 </head>
-    <div>
+{% include 'nav.html' %}
+<!--<style>-->
+<!--        input[type='radio']:after {-->
+<!--        width: 20px;-->
+<!--        height: 20px;-->
+<!--        border-radius: 15px;-->
+<!--        top: -2px;-->
+<!--        left: -1px;-->
+<!--        position: relative;-->
+<!--        background-color: #d1d3d1;-->
+<!--        content: '';-->
+<!--        display: inline-block;-->
+<!--        visibility: visible;-->
+<!--        border: 2px solid white;-->
+<!--    }-->
+
+<!--    input[type='radio']:checked:after {-->
+<!--        width: 25px;-->
+<!--        height: 25px;-->
+<!--        border-radius: 15px;-->
+<!--        top: -2px;-->
+<!--        left: -1px;-->
+<!--        position: relative;-->
+<!--        background-color: #ffa500;-->
+<!--        content: '';-->
+<!--        display: inline-block;-->
+<!--        visibility: visible;-->
+<!--        border: 2px solid white;-->
+<!--    }-->
+<!--</style>-->
+<h1 style="font-weight: bolder;font-family: 'NanumSquareRound';font-size: 400%;margin: 15% 10% 0;">04 교육과학관</h1>
+    <div class="option-box center">
         <form action="{% url 'Building_list:room_list' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div>
-                <p style="font-family: 'NanumSquareRound';font-style: normal;font-weight: 800;font-size: 22px;line-height: 22px;color: #000000; ">옵션 선택</p>
-                <p id="checkout">전체해지</p>
-                <input type="submit" value="적용">
+                <br>
+                <br>
+<!--                <p style="font-family: 'NanumSquareRound';font-style: normal;font-weight: 800;font-size: 22px;line-height: 22px;color: #000000; ">옵션 선택</p>-->
+<!--                <p id="checkout">전체해지</p>-->
+<!--                <input type="submit" value="적용">-->
+                <span style="font-family: 'NanumSquareRound';font-weight: 700;font-size: 300%;margin: 0 6%;">옵션 선택</span>
+                <p style="display: inline-block; border-radius: 40px;font-size:28px; width: 160px;height: 63px; line-height: 63px;  text-align:center; border: none;color:#FFFFFF;font-weight:bold;background-color:#ACC1B9;" id="checkout">전체해지</p>
+                <input style="display: inline-block; border-radius: 40px;font-size:28px;width: 22%;height: 3%;border: none;color:#FFFFFF;font-weight:bold;background-color:#34F0A2;" type="submit" value="적용">
+
             </div>
-            <p>요일</p>
+            <p style="font-family: 'NanumSquareRound';font-weight: 700;font-size: 300%;margin: 10% 6% 0;">요일</p>
             <div>
-                <label><input type="radio" value="mon" name="day_of_the_week"> 월</label>
-                <label><input type="radio" value="tue" name="day_of_the_week"> 화</label>
-                <label><input type="radio" value="wed" name="day_of_the_week"> 수</label>
-                <label><input type="radio" value="thu" name="day_of_the_week"> 목</label>
-                <label><input type="radio" value="fri" name="day_of_the_week"> 금</label>
+                <label for="mon" class="click_day_box" id="mon_label"><input type="radio" value="mon" name="day_of_the_week" id="mon" style="display:none;"> 월</label>
+                <label for="tue" class="day_box" id="tue_label"><input type="radio" value="tue" name="day_of_the_week" id="tue" style="display:none;"> 화</label>
+                <label for="wed" class="day_box" id="wed_label"><input type="radio" value="wed" name="day_of_the_week" id="wed" style="display:none;"> 수</label>
+                <label for="thu" class="day_box" id="thu_label"><input type="radio" value="thu" name="day_of_the_week" id="thu" style="display:none;"> 목</label>
+                <label for="fri" class="day_box" id="fri_label"><input type="radio" value="fri" name="day_of_the_week " id="fri" style="display:none;"> 금</label>
             </div>
-            <p>층 수</p>
+            <p style="font-family:'NanumSquareRound';font-weight: 700;font-size: 300%;margin: 10% 6% 0;">층수</p>
             <div>
-                <label><input type="radio" value="all" name="floor">전체</label>
-                <label><input type="radio" value="1" name="floor">1층</label>
-                <label><input type="radio" value="2" name="floor">2층</label>
-                <label><input type="radio" value="3" name="floor">3층</label>
+                <label for="all" class="click_floor_box" id="all_label"><input type="radio" value="all" name="floor" id="all" style="display:none;"> 전체</label>
+                <label for="one" class="floor_box" id="one_label"><input type="radio" value="1" name="floor" id="one" style="display:none;"> 1층</label>
+                <label for="two" class="floor_box" id="two_label"><input type="radio" value="2" name="floor" id="two" style="display:none;"> 2층</label>
+                <label for="three" class="floor_box" id="three_label"><input type="radio" value="3" name="floor" id="three" style="display:none;"> 3층</label>
             </div>
         </form>
     </div>

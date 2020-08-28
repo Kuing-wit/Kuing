@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .center {
-    margin: 40% auto;
+    margin: 22% auto;
   width: 80%;
   padding: 10px;
 }
@@ -77,4 +84,14 @@ border-radius: 50px;
 
 .list-line{
     text-align:center;
+}
+
+.option-box{
+    border: 5px solid #34F0A2;
+box-sizing: border-box;
+border-radius: 53px;
+}
+
+.option-btn{
+
 }

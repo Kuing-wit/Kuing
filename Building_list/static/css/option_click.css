@@ -1,0 +1,96 @@
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.day_box{
+margin-left: 40px;
+width: 90px;
+height: 60px;
+
+background: #FFFFFF;
+box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.15);
+border-radius: 108px;
+
+font-family: NanumSquareRound;
+font-style: normal;
+font-weight: normal;
+font-size: 38px;
+line-height: 60px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #000000;
+
+}
+.click_day_box{
+margin-left: 40px;
+width: 90px;
+height: 60px;
+
+background: #34F0A2;
+box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.15);
+border-radius: 48px;
+
+font-family: NanumSquareRound;
+font-style: normal;
+font-weight: normal;
+font-size: 38px;
+line-height: 60px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #000000;
+}
+
+.floor_box{
+margin-left: 40px;
+width: 130px;
+height: 70px;
+
+background: #FFFFFF;
+box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.15);
+border-radius: 18px;
+
+font-family: NanumSquareRound;
+font-style: normal;
+font-weight: normal;
+font-size: 38px;
+line-height: 70px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #000000;
+
+}
+
+.click_floor_box{
+margin-left: 40px;
+width: 130px;
+height: 70px;
+
+background: #34F0A2;
+box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.15);
+border-radius: 18px;
+
+font-family: NanumSquareRound;
+font-style: normal;
+font-weight: normal;
+font-size: 38px;
+line-height: 70px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #000000;
+}
