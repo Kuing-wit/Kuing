@@ -52,6 +52,7 @@ color: #ACC1B9;
 background: #FFFFFF;
 border: 2px solid #00FF94;
 box-sizing: border-box;
+margin-bottom: 5%;
  padding: 7% 5%;
 }
 
@@ -60,6 +61,6 @@ box-sizing: border-box;
 width: 100%;
 height: 80%;
 background: #34F0A2;
-border-radius: 26px;
+border-radius: 50px;
  padding: 4% 5%;
 }
