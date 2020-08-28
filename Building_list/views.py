@@ -16,18 +16,22 @@ def room_list(request):
 
         rooms = Room.objects.all()
         lectures = Lecture.objects.all()
+
         room_dict = {}
+
         for i in range(0, rooms.__len__()):
             temp = rooms[i]
-            if (temp.day_of_the_week == day_of_the_week) and (temp.floor == floors):
+            if ((temp.day_of_the_week == day_of_the_week) and (temp.floor == floors)) or ((temp.day_of_the_week == day_of_the_week) and ('all' == floors)):
                 room_dict[temp] = i
+                flag = 'true'
                 for j in range(0, lectures.__len__()):
                     temp2 = lectures[j]
                     if (temp2.room == temp) and temp2.created_string() != 'false':
-                        if j == 0:
+                        if flag == 'true':
                             temp.available_time = temp2.start_time
                             temp.name = temp2.name
                             temp.save()
+                            flag = 'false'
                         else:
                             time = datetime.combine(date.min, temp.available_time) - datetime.combine(date.min, temp2.start_time)
                             if time > timedelta(minutes=1):

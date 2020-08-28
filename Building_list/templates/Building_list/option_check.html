@@ -4,12 +4,17 @@
 {% endblock %}
 
 {% block content %}
+<head>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/option_check.js' %}"></script>
+</head>
     <div>
         <form action="{% url 'Building_list:room_list' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div>
                 <p style="font-family: 'NanumSquareRound';font-style: normal;font-weight: 800;font-size: 22px;line-height: 22px;color: #000000; ">옵션 선택</p>
-                <p>전체해지</p>
+                <p id="checkout">전체해지</p>
                 <input type="submit" value="적용">
             </div>
             <p>요일</p>
