@@ -27,6 +27,8 @@ class Room(models.Model):
     name = models.TextField(max_length=100, default='')
     #층
     floor = models.TextField(max_length=10, default='')
+    #시간표
+    img = models.ImageField(upload_to='timeline_photo/%Y/%m/%d', blank=True)
 
     def __str__(self):
         return self.number+"호/ "+self.day_of_the_week+ "요일"

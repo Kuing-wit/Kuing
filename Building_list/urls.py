@@ -10,3 +10,5 @@ urlpatterns = [
     path('room_list/', room_list, name='room_list'),
     path('room_detail/<int:room_id>/', room_detail, name='room_detail'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
