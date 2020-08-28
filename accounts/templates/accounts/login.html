@@ -8,7 +8,7 @@
 <style>
 input[type='email'] { font-size: 50px; }
 input[type='password'] { font-size: 50px; }
-input[type='submit'] { font-size: 40px; }
+button[type='submit'] { color: #FFFFFF; font-size: 40px; }
 
 </style>
 
@@ -29,9 +29,10 @@ input[type='submit'] { font-size: 40px; }
             <input type="password" class="form-control input-lg kuing-input" name="password" id="password"
                    size="20" value="{{ form.password.value|default_if_none:'' }}" placeholder="Password">
         </div>
-            <input type="submit" style="color: #FFFFFF" value="Login" class = 'btn login-btn'>
-        </form>
+{#            <input type="submit" style="color: #FFFFFF" value="Login" class = 'btn login-btn'>#}
 
+        </form>
+ <button type="submit" class="btn login-btn" onclick="location.href='{% url 'home:home' %}'">Login</button>
     </div>
 
 <p style="font-size: 170%; text-align: center;color: #ACC1B9">*별도의 회원가입 절차가 없으며, <br>
@@ -39,3 +40,8 @@ input[type='submit'] { font-size: 40px; }
 
 </div>
 {% endblock %}
+
+
+
+
+
