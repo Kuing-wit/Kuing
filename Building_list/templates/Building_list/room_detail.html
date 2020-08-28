@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/room_detail.css' %}">
 </head>
 <div>
-    <p style="margin-bottom: 0px; margin-top: 100px; margin-left: 50px; width:400px; height: 150px; font-family: NanumSquareRound; font-style: normal; font-weight: bold; font-size: 60px; line-height: 150px;text-align: center;color: #000000;">04 교육과학관</p>
+    <p style="margin-bottom: 0px; margin-top: 90px; margin-left: 50px; width:400px; height: 150px; font-family: NanumSquareRound; font-style: normal; font-weight: bold; font-size: 60px; line-height: 150px;text-align: center;color: #000000;">04 교육과학관</p>
     <p style=" margin-left: 70px; margin-top: 30px;
     font-family: NanumSquareRound;
 font-style: normal;
@@ -45,6 +45,7 @@ color: #000000;">{{ room.created_string }} 후</p>
 font-style: normal;
 font-weight: normal;
 font-size: 45px;
+margin-bottom: 120px;
 line-height: 18px;
 /* identical to box height */
 
@@ -52,8 +53,8 @@ text-align: center;
 letter-spacing: -0.015em;
 
 color: #000000;">[{{ room.name }}] 수업</p>
-            <div>
-                <img  src=" {{ room.img.url }}">
+            <div style="text-align:center; ">
+                <img style="width:840px; height: 1100px;"  src="/static/images/{{ room.number }}.png">
             </div>
         </div>
 </div>
