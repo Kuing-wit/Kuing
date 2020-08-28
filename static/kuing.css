@@ -1,0 +1,65 @@
+.center {
+    margin: 40% auto;
+  width: 80%;
+  padding: 10px;
+}
+
+.main-comment {
+    /* 쿠잉 */
+
+/*position: absolute;*/
+/*width: 89px;*/
+/*height: 48px;*/
+/*left: 143px;*/
+/*top: 165px;*/
+
+font-family: Sandoll Dunggulrim2;
+font-style: normal;
+font-weight: normal;
+font-size: 600%;
+line-height: 48px;
+    text-align: center;
+/* identical to box height */
+margin-bottom: 10%;
+color: #00FF94;
+
+}
+
+.intro-comment{
+    /* 건국대학교 잉여 강의실 찾기 서비스 */
+text-align: center;
+/*position: absolute;*/
+/*width: 244px;*/
+/*height: 16px;*/
+/*left: 70px;*/
+/*top: 231px;*/
+
+font-family: NanumGothic;
+font-style: normal;
+font-weight: bold;
+font-size: 200%;
+line-height: 16px;
+/* identical to box height */
+margin-bottom: 10%;
+color: #ACC1B9;
+
+
+}
+
+.kuing-input{
+    /* Rectangle 2 */
+
+background: #FFFFFF;
+border: 2px solid #00FF94;
+box-sizing: border-box;
+ padding: 7% 5%;
+}
+
+.login-btn{
+   /* Rectangle 2 */
+width: 100%;
+height: 80%;
+background: #34F0A2;
+border-radius: 26px;
+ padding: 4% 5%;
+}
