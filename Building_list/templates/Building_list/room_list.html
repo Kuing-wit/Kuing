@@ -9,55 +9,92 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="{% static 'js/room_list.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/room_detail.css' %}">
 </head>
 <div>
     <div>
-        <p>04 교육과학관</p>
-        <button onclick ="location.href='{% url 'Building_list:option_check' %}'">옵션 선택</button>
+        <p style="display: inline-block; margin-bottom: 0px; margin-top: 100px; margin-left: 50px; width:400px; height: 150px; font-family: NanumSquareRound; font-style: normal; font-weight: bold; font-size: 60px; line-height: 150px;text-align: center;color: #000000;">04 교육과학관</p>
+        <button style="display: inline-block; margin-left: 200px;
+width: 261px;
+height: 64px;
+
+background: #ACC1B9;
+border-radius: 40px;
+border: 0px;
+font-family: Comfortaa;
+font-style: normal;
+font-weight: 500;
+font-size: 40px;
+line-height: 64px;
+/* identical to box height */
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #000000;
+" onclick ="location.href='{% url 'Building_list:option_check' %}'">옵션 선택</button>
     </div>
-    <div>
-        <label><input type="radio" value="all" name="show_list"> 전체 강의실</label>
-        <label><input type="radio" value="use" name="show_list"> 사용중</label>
-        <label><input type="radio" value="empty" name="show_list"> 빈강의실 </label>
+    <div style="text-align: center; margin-top: 60px;">
+        <label for="all" id="label_one" class="click_label"><input style="display:none;" type="radio" value="all" name="show_list" id="all"> 전체 강의실</label>
+        <label for="use" id="label_two" class="unclick_label"><input style="display:none;" type="radio" value="use" name="show_list" id="use"> 사용중</label>
+        <label for="empty" id="label_three" class="unclick_label"><input style="display:none;" type="radio" value="empty" name="show_list" id="empty"> 빈강의실 </label>
     </div>
-    <div id="one_div">
+    <div id="one_div" style="margin-top:100px;">
         {% if rooms %}
             {% for temp in rooms %}
-            <div onclick ="location.href='{% url 'Building_list:room_detail' temp.id %}'">
-                <p>{{ temp.number }}</p>
-                <p>{{ temp.created_string }}</p>
-                <p>{{ temp.name }}</p>
-                <p>{{ temp.on_off }}</p>
+            <div style="height: 100px; margin-left:50px; margin-bottom:70px;" onclick ="location.href='{% url 'Building_list:room_detail' temp.id %}'">
+                <p class="number_font">{{ temp.number }} 호</p>
+                {% if temp.created_string == '수업 없음' %}
+                <p class="time_font">{{ temp.created_string }}</p>
+                {% else %}
+                <p class="time_font">{{ temp.created_string }}뒤 수업</p>
+                {% endif %}
+                {% if temp.on_off == '빈강의실' %}
+                <p class="empty_button">{{ temp.on_off }}</p>
+                {% else %}
+                <p class="use_button">{{ temp.on_off }}</p>
+                {% endif %}
             </div>
             {% endfor %}
         {% endif %}
     </div>
-    <hr>
-    <div id="two_div" style="display: none;">
+    <div id="two_div" style="display: none; margin-top:100px;">
         {% if rooms %}
             {% for temp in rooms %}
                 {% if temp.on_off == '사용중'%}
-                <div onclick ="location.href='{% url 'Building_list:room_detail' temp.id %}'">
-                    <p>{{ temp.number }}</p>
-                    <p>{{ temp.created_string }}</p>
-                    <p>{{ temp.name }}</p>
-                    <p>{{ temp.on_off }}</p>
-                </div>
+                <div style="height: 100px; margin-left:50px; margin-bottom:70px;" onclick ="location.href='{% url 'Building_list:room_detail' temp.id %}'">
+                <p class="number_font">{{ temp.number }} 호</p>
+                {% if temp.created_string == '수업 없음' %}
+                <p class="time_font">{{ temp.created_string }}</p>
+                {% else %}
+                <p class="time_font">{{ temp.created_string }}뒤 수업</p>
+                {% endif %}
+                {% if temp.on_off == '빈강의실' %}
+                <p class="empty_button">{{ temp.on_off }}</p>
+                {% else %}
+                <p class="use_button">{{ temp.on_off }}</p>
+                {% endif %}
+            </div>
                 {% endif %}
             {% endfor %}
         {% endif %}
     </div>
-    <hr>
-    <div id="three_div"  style="display: none;">
+    <div id="three_div"  style="display: none; margin-top:100px;">
         {% if rooms %}
             {% for temp in rooms %}
                 {% if temp.on_off == '빈강의실'%}
-                <div onclick ="location.href='{% url 'Building_list:room_detail' temp.id %}'">
-                    <p>{{ temp.number }}</p>
-                    <p>{{ temp.created_string }}</p>
-                    <p>{{ temp.name }}</p>
-                    <p>{{ temp.on_off }}</p>
-                </div>
+                <div style="height: 100px; margin-left:50px; margin-bottom:70px;" onclick ="location.href='{% url 'Building_list:room_detail' temp.id %}'">
+                <p class="number_font">{{ temp.number }} 호</p>
+                {% if temp.created_string == '수업 없음' %}
+                <p class="time_font">{{ temp.created_string }}</p>
+                {% else %}
+                <p class="time_font">{{ temp.created_string }}뒤 수업</p>
+                {% endif %}
+                {% if temp.on_off == '빈강의실' %}
+                <p class="empty_button">{{ temp.on_off }}</p>
+                {% else %}
+                <p class="use_button">{{ temp.on_off }}</p>
+                {% endif %}
+            </div>
                 {% endif %}
             {% endfor %}
         {% endif %}

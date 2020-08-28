@@ -5,3 +5,102 @@
     font-style: normal;
 }
 
+.click_label{
+    width: 280px;
+    height: 90px;
+    background: #34F0A2;
+border-radius: 57px;
+
+    font-family: NanumSquareRound;
+font-style: normal;
+font-weight: bold;
+font-size: 45px;
+line-height: 90px;
+/* identical to box height */
+
+text-align: center;
+
+color: #000000;
+}
+.unclick_label{
+    width: 280px;
+    height: 90px;
+    font-family: NanumSquareRound;
+font-style: normal;
+font-weight: bold;
+font-size: 45px;
+line-height: 90px;
+/* identical to box height */
+
+text-align: center;
+
+color: #ACC1B9;
+
+}
+
+.number_font{
+width:250px;
+display:inline-block;
+font-family: NanumSquareRound;
+font-style: normal;
+font-weight: bold;
+font-size: 45px;
+line-height: 45px;
+/* identical to box height */
+
+text-align: center;
+
+color: #000000;
+}
+
+.time_font{
+width:290px;
+display:inline-block;
+font-family: NanumSquareRound;
+font-style: normal;
+font-weight: normal;
+font-size: 45px;
+line-height: 45px;
+/* identical to box height */
+
+text-align: center;
+
+color: #000000;
+}
+
+.empty_button{
+display:inline-block;
+width: 234px;
+height: 100px;
+margin-left: 50px;
+
+background: #34F0A2;
+border-radius: 50.5px;
+font-family: NanumSquareRound;
+font-style: normal;
+font-weight: bold;
+font-size: 45px;
+line-height: 100px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+}
+.use_button{
+display:inline-block;
+width: 234px;
+height: 100px;
+margin-left: 50px;
+
+background: #ACC1B9;
+border-radius: 50.5px;
+font-family: NanumSquareRound;
+font-style: normal;
+font-weight: bold;
+font-size: 45px;
+line-height: 100px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+}
