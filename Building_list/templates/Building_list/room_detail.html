@@ -4,11 +4,54 @@
 {% endblock %}
 
 {% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/room_detail.css' %}">
+</head>
 <div>
-        <div>
-            <p>{{ room.number }}</p>
-            <p>{{ room.name }}</p>
-            <p>{{ room.created_string }}</p>
+    <p style="margin-bottom: 0px; margin-top: 100px; margin-left: 50px; width:400px; height: 150px; font-family: NanumSquareRound; font-style: normal; font-weight: bold; font-size: 60px; line-height: 150px;text-align: center;color: #000000;">04 교육과학관</p>
+    <p style=" margin-left: 70px; margin-top: 30px;
+    font-family: NanumSquareRound;
+font-style: normal;
+font-weight: normal;
+font-size: 60px;
+line-height: 24px;
+color: #000000;
+">{{ room.number }} 호</p>
+        <div style="margin: 0 auto; width: 880px; height: 1500px; background: #FFFFFF;border-radius: 150px; box-shadow: 0px 3px 17px -1px rgba(0, 0, 0, 0.15);">
+            <div>
+                <p style="display:inline-block; font-family: NanumSquareRound;
+font-style: normal;
+font-weight: 800;
+font-size: 50px;
+line-height: 20px;
+
+text-align: center;
+margin-left: 150px;
+color: #34F0A2;">강의실 정보</p>
+                <p style="float: right; font-family: NanumSquareRound;
+font-style: normal;
+font-weight: bold;
+font-size: 45px;
+line-height: 18px;
+text-align: center;
+margin-right: 130px;
+margin-top: 55px;
+color: #000000;">{{ room.created_string }} 후</p>
+            </div>
+            <p style="font-family: NanumSquareRound;
+font-style: normal;
+font-weight: normal;
+font-size: 45px;
+line-height: 18px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #000000;">[{{ room.name }}] 수업</p>
+            <div>
+                <img  src=" {{ room.img.url }}">
+            </div>
         </div>
 </div>
 {% endblock %}
