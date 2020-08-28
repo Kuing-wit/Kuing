@@ -24,6 +24,4 @@ urlpatterns = [
     path('', include('home.urls')),
     path('accounts/', include('accounts.urls')),
     path('building_list/', include('Building_list.urls')),
-
-
 ]

@@ -28,6 +28,7 @@ line-height: 20px;
 text-align: center;
 margin-left: 150px;
 color: #34F0A2;">강의실 정보</p>
+                {% if room.created_string != '수업 없음' %}
                 <p style="float: right; font-family: NanumSquareRound;
 font-style: normal;
 font-weight: bold;
@@ -37,6 +38,7 @@ text-align: center;
 margin-right: 130px;
 margin-top: 55px;
 color: #000000;">{{ room.created_string }} 후</p>
+                {% endif %}
             </div>
             <p style="font-family: NanumSquareRound;
 font-style: normal;
