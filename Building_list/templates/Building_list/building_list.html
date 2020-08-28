@@ -1,8 +1,50 @@
-{% load static %}
+{% extends 'base.html' %}
 
-{% block title %}
-{% endblock %}
 
+{% include 'nav.html' %}
 {% block content %}
-    <a href="{% url 'Building_list:option_check' %}" style="font-family: 'NanumSquareRound',sans-serif;">04 교육과학관</a>
-{% endblock %}
+<img src="/static/images/nav.png" width="100%;">
+<!--    <a href="{% url 'Building_list:option_check' %}" style="font-family: 'NanumSquareRound',sans-serif;"><img src="/static/images/01.png"></a>-->
+<div class="list-line">
+<a href="#" class="list-left"><img src="/static/images/01.png" width="40%"></a>
+    <a href="#" class="list-right"><img src="/static/images/02.png" width="40%"></a>
+</div>
+<div class="list-line">
+<a href="#" class="list-left"><img src="/static/images/03.png" width="40%"></a>
+    <a href="{% url 'Building_list:option_check' %}" class="list-right"><img src="/static/images/04.png" width="40%"></a>
+</div>
+<div class="list-line">
+<a href="#" class="list-left"><img src="/static/images/05.png" width="40%"></a>
+    <a href="#" class="list-right"><img src="/static/images/06.png" width="40%"></a>
+</div>
+<div class="list-line">
+<a href="#" class="list-left"><img src="/static/images/08.png" width="40%"></a>
+    <a href="#" class="list-right"><img src="/static/images/10.png" width="40%"></a>
+</div>
+<div class="list-line">
+<a href="#" class="list-left"><img src="/static/images/11.png" width="40%"></a>
+    <a href="#" class="list-right"><img src="/static/images/12.png" width="40%"></a>
+</div>
+<div class="list-line">
+<a href="#" class="list-left"><img src="/static/images/14.png" width="40%"></a>
+    <a href="#" class="list-right"><img src="/static/images/15.png" width="40%"></a>
+</div>
+<div class="list-line">
+<a href="#" class="list-left"><img src="/static/images/16.png" width="40%"></a>
+    <a href="#" class="list-right"><img src="/static/images/17.png" width="40%"></a>
+</div>
+<div class="list-line">
+<a href="#" class="list-left"><img src="/static/images/18.png" width="40%"></a>
+    <a href="#" class="list-right"><img src="/static/images/19.png" width="40%"></a>
+</div>
+<div class="list-line">
+<a href="#" class="list-left"><img src="/static/images/21.png" width="40%"></a>
+    <a href="#" class="list-right"><img src="/static/images/22.png" width="40%"></a>
+</div>
+<div class="list-line">
+<a href="#" class="list-left"><img src="/static/images/23.png" width="40%"></a>
+    <a href="#" class="list-right"><img src="/static/images/24.png" width="40%"></a>
+</div>
+
+
+    {% endblock %}

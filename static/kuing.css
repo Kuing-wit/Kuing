@@ -64,3 +64,17 @@ background: #34F0A2;
 border-radius: 50px;
  padding: 4% 5%;
 }
+
+.list-left {
+
+    margin: 47px auto;
+}
+
+.list-right {
+
+    margin: 47px auto;
+}
+
+.list-line{
+    text-align:center;
+}
