@@ -4,15 +4,63 @@
 {% endblock %}
 
 {% block content %}
+<head>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/room_list.js' %}"></script>
+</head>
 <div>
-    {% if rooms %}
-        {% for temp in rooms %}
-        <div onclick ="location.href='{% url 'Building_list:room_detail' temp.id %}'">
-            <p>{{ temp.number }}</p>
-            <p>{{ temp.available_time }}</p>
-            <p>{{ temp.on_off }}</p>
-        </div>
-        {% endfor %}
-    {% endif %}
+    <div>
+        <p>04 교육과학관</p>
+        <button onclick ="location.href='{% url 'Building_list:option_check' %}'">옵션 선택</button>
+    </div>
+    <div>
+        <label><input type="radio" value="all" name="show_list"> 전체 강의실</label>
+        <label><input type="radio" value="use" name="show_list"> 사용중</label>
+        <label><input type="radio" value="empty" name="show_list"> 빈강의실 </label>
+    </div>
+    <div id="one_div">
+        {% if rooms %}
+            {% for temp in rooms %}
+            <div onclick ="location.href='{% url 'Building_list:room_detail' temp.id %}'">
+                <p>{{ temp.number }}</p>
+                <p>{{ temp.created_string }}</p>
+                <p>{{ temp.name }}</p>
+                <p>{{ temp.on_off }}</p>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <hr>
+    <div id="two_div" style="display: none;">
+        {% if rooms %}
+            {% for temp in rooms %}
+                {% if temp.on_off == '사용중'%}
+                <div onclick ="location.href='{% url 'Building_list:room_detail' temp.id %}'">
+                    <p>{{ temp.number }}</p>
+                    <p>{{ temp.created_string }}</p>
+                    <p>{{ temp.name }}</p>
+                    <p>{{ temp.on_off }}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    <hr>
+    <div id="three_div"  style="display: none;">
+        {% if rooms %}
+            {% for temp in rooms %}
+                {% if temp.on_off == '빈강의실'%}
+                <div onclick ="location.href='{% url 'Building_list:room_detail' temp.id %}'">
+                    <p>{{ temp.number }}</p>
+                    <p>{{ temp.created_string }}</p>
+                    <p>{{ temp.name }}</p>
+                    <p>{{ temp.on_off }}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+
 </div>
 {% endblock %}
