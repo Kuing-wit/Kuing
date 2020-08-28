@@ -9,7 +9,8 @@
         {% for temp in rooms %}
         <div onclick ="location.href='{% url 'Building_list:room_detail' temp.id %}'">
             <p>{{ temp.number }}</p>
-            <p>{{ temp.available_time }}</p>
+            <p>{{ temp.created_string }}</p>
+            <p>{{ temp.name }}</p>
             <p>{{ temp.on_off }}</p>
         </div>
         {% endfor %}
