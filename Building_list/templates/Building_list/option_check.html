@@ -1,0 +1,32 @@
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <div>
+        <form action="{% url 'Building_list:room_list' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <p style="font-family: 'NanumSquareRound';font-style: normal;font-weight: 800;font-size: 22px;line-height: 22px;color: #000000; ">옵션 선택</p>
+                <p>전체해지</p>
+                <input type="submit" value="적용">
+            </div>
+            <p>요일</p>
+            <div>
+                <label><input type="radio" value="mon" name="day_of_the_week"> 월</label>
+                <label><input type="radio" value="tue" name="day_of_the_week"> 화</label>
+                <label><input type="radio" value="wed" name="day_of_the_week"> 수</label>
+                <label><input type="radio" value="thu" name="day_of_the_week"> 목</label>
+                <label><input type="radio" value="fri" name="day_of_the_week"> 금</label>
+            </div>
+            <p>층 수</p>
+            <div>
+                <label><input type="radio" value="all" name="floor">전체</label>
+                <label><input type="radio" value="1" name="floor">1층</label>
+                <label><input type="radio" value="2" name="floor">2층</label>
+                <label><input type="radio" value="3" name="floor">3층</label>
+            </div>
+        </form>
+    </div>
+{% endblock %}

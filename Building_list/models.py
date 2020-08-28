@@ -1,45 +1,73 @@
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
+from datetime import datetime, timedelta, date
 
 FlAG = [
     ('사용중', '사용중'),
     ('빈강의실', '빈강의실'),
 ]
-WEEK = [
-    ('월', '월'),
-    ('화', '화'),
-    ('수', '수'),
-    ('목', '목'),
-    ('금', '금'),
-    ('토', '토'),
-    ('일', '일'),
+WEEK = [ #첫번재가 장고, 두번째가 탬플릿
+    ('mon', '월'),
+    ('tue', '화'),
+    ('wed', '수'),
+    ('thu', '목'),
+    ('fri', '금'),
 ]
-class Lecture(models.Model):
-    #호
+class Room(models.Model):
+    # 호
     number = models.CharField(max_length=10, default='')
-    #층
-    floor = models.CharField(max_length=10, default='')
-    #수업시간(24시 기준)
-    class_time = models.CharField(max_length=20, default='')
-    #사용가능시간
-    available_time = models.CharField(max_length=20, default='')
-    #사용여부
+    # 사용여부
     on_off = models.CharField(max_length=50, choices=FlAG, default='빈강의실')
     #요일
     day_of_the_week = models.CharField(max_length=20, choices=WEEK, default='월')
+    #사용 가능 시간
+    available_time = models.TimeField(default='')
+    #층
+    floor = models.TextField(max_length=10, default='')
 
-class Building(models.Model):
-    #건물이름
-    name = models.TextField(max_length=200, default='')
-    #강의 모델
-    lecture = models.ManyToManyField(Lecture)
+    def __str__(self):
+        return self.number+"호/ "+self.day_of_the_week+ "요일"
+
+class Lecture(models.Model):
+    # 룸 모델
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="lecture_room")
+    # 강의 명
+    name = models.TextField(max_length=100, default='')
+    #수업 시작 시간
+    start_time = models.TimeField(default='')
+    #수업 종료 시간
+    finish_time = models.TimeField(default='')
+    #강의 순서
+    number = models.CharField(max_length=10, default='')
+
+    def __str__(self):
+        return self.name
+
+    def created_string(self):
+        time_now = timezone.now().time()
+
+        time = datetime.combine(date.min, self.start_time)-datetime.combine(date.min, time_now)
+        if time < timedelta(minutes=1):
+            return 'dfadf'
+        elif time < timedelta(hours=1):
+            return str(int(time.seconds / 60)) + '분 전'
+        elif time < timedelta(days=1):
+            return str(int(time.seconds / 3600)) + '시간 전'
+        else:
+            return 'false'
 
 class Reservation(models.Model):
-    # 강의 모델
-    lecture = models.ForeignKey(Lecture, on_delete=models.CASCADE, related_name="lecture_list")
-    # 목적
+    # 룸 모델
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="reservation_room")
+    # 강의 명
     purpose = models.TextField(max_length=100, default='')
-    # 사용시간
-    use_time = models.CharField(max_length=20, default='')
-    # 유저모델
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='photos')
+    #예약 시작 시간
+    start_time = models.TimeField(default='')
+    #예약 종료 시간
+    finish_time = models.TimeField(default='')
+    #층
+    floor = models.TextField(max_length=10, default='')
+
+    def __str__(self):
+        return self.name
