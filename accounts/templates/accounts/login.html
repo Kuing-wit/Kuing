@@ -8,34 +8,37 @@ input[type='email'] { font-size: 50px; }
 input[type='password'] { font-size: 50px; }
 button[type='submit'] { color: #FFFFFF; font-size: 40px; }
 
+
 </style>
 
 <div class="center">
     <div style="margin-bottom: 30%;">
-            <img src="/static/images/logo.png" width="27%" class="rounded mx-auto d-block">
+        <img src="/static/images/logo.png" width="27%" class="rounded mx-auto d-block">
 
-            <h3 class="intro-comment my-5">건국대학교 잉여 강의실 찾기 서비스</h3>
-<br>
+        <h3 class="intro-comment my-5">건국대학교 잉여 강의실 찾기 서비스</h3>
+        <br>
         <form method="post" class="post-form my-5" action="{% url 'accounts:login' %}">
             {% csrf_token %}
             <div class="form-group">
 
-            <input type="email" class="form-control kuing-input" name="email" id="email"
-                size="80"   value="{{ form.username.value|default_if_none:'' }}" placeholder="Enter email">
-        </div>
-        <div class="form-group">
+                <input type="email" class="form-control kuing-input" name="email" id="email"
+                       size="80" value="{{ form.username.value|default_if_none:'' }}" placeholder="Enter email">
+            </div>
+            <div class="form-group">
 
-            <input type="password" class="form-control input-lg kuing-input" name="password" id="password"
-                   size="20" value="{{ form.password.value|default_if_none:'' }}" placeholder="Password">
-        </div>
-{#            <input type="submit" style="color: #FFFFFF" value="Login" class = 'btn login-btn'>#}
+                <input type="password" class="form-control input-lg kuing-input" name="password" id="password"
+                       size="20" value="{{ form.password.value|default_if_none:'' }}" placeholder="Password">
+            </div>
+            {# <input type="submit" style="color: #FFFFFF" value="Login" class='btn login-btn'>#}
 
         </form>
- <button type="submit" style="font-weight:bolder;font-family: 'Sandoll GothicNeoRound'; " class="btn login-btn" onclick="location.href=' {% url 'Building_list:building_list' %} ' ">Login</button>
+        <button type="submit" style="font-weight:bolder;font-family: 'Sandoll GothicNeoRound'; " class="btn login-btn"
+                onclick="location.href=' {% url 'Building_list:building_list' %} ' ">Login
+        </button>
     </div>
 
-<p style="font-size: 170%; text-align: center;color: #ACC1B9">*별도의 회원가입 절차가 없으며, <br>
-건국대학교 홈페이지 아이디/비밀번호와 동일합니다.</p>
+    <p style="font-size: 170%; text-align: center;color: #ACC1B9">*별도의 회원가입 절차가 없으며, <br>
+        건국대학교 홈페이지 아이디/비밀번호와 동일합니다.</p>
 
 </div>
 {% endblock %}

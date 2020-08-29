@@ -20,35 +20,35 @@
 /*left: 143px;*/
 /*top: 165px;*/
 
-font-family: Sandoll Dunggulrim2;
-font-style: normal;
-font-weight: normal;
-font-size: 600%;
-line-height: 48px;
-    text-align: center;
-/* identical to box height */
-margin-bottom: 10%;
-color: #00FF94;
+    font-family: Sandoll Dunggulrim2;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 600%;
+    line-height: 48px;
+        text-align: center;
+    /* identical to box height */
+    margin-bottom: 10%;
+    color: #00FF94;
 
 }
 
 .intro-comment{
     /* 건국대학교 잉여 강의실 찾기 서비스 */
-text-align: center;
-/*position: absolute;*/
-/*width: 244px;*/
-/*height: 16px;*/
-/*left: 70px;*/
-/*top: 231px;*/
+    text-align: center;
+    /*position: absolute;*/
+    /*width: 244px;*/
+    /*height: 16px;*/
+    /*left: 70px;*/
+    /*top: 231px;*/
 
-font-family: NanumGothic;
-font-style: normal;
-font-weight: bold;
-font-size: 200%;
-line-height: 16px;
-/* identical to box height */
-margin-bottom: 10%;
-color: #ACC1B9;
+    font-family: NanumGothic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 200%;
+    line-height: 16px;
+    /* identical to box height */
+    margin-bottom: 10%;
+    color: #ACC1B9;
 
 
 }
@@ -56,20 +56,20 @@ color: #ACC1B9;
 .kuing-input{
     /* Rectangle 2 */
 
-background: #FFFFFF;
-border: 2px solid #00FF94;
-box-sizing: border-box;
-margin-bottom: 5%;
- padding: 7% 5%;
+    background: #FFFFFF;
+    border: 2px solid #00FF94;
+    box-sizing: border-box;
+    margin-bottom: 5%;
+     padding: 7% 5%;
 }
 
 .login-btn{
    /* Rectangle 2 */
-width: 100%;
-height: 80%;
-background: #34F0A2;
-border-radius: 50px;
- padding: 4% 5%;
+    width: 100%;
+    height: 80%;
+    background: #34F0A2;
+    border-radius: 50px;
+     padding: 4% 5%;
 }
 
 .list-left {
@@ -88,8 +88,8 @@ border-radius: 50px;
 
 .option-box{
     border: 5px solid #34F0A2;
-box-sizing: border-box;
-border-radius: 53px;
+    box-sizing: border-box;
+    border-radius: 53px;
 }
 
 .option-btn{

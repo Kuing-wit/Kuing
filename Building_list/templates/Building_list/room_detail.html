@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{% static 'css/room_detail.css' %}">
 </head>
 <div>
-    <p style="margin-bottom: 0px; margin-top: 90px; margin-left: 50px; width:400px; height: 150px; font-family: NanumSquareRound; font-style: normal; font-weight: bold; font-size: 60px; line-height: 150px;text-align: center;color: #000000;">04 교육과학관</p>
+    <p style="margin-bottom: 0px; margin-top: 90px; margin-left: 50px; width:400px; height: 150px; font-family: NanumSquareRound; font-style: normal; font-weight: bold; font-size: 60px; line-height: 150px;text-align: center;color: #000000;">
+        04 교육과학관</p>
     <p style=" margin-left: 70px; margin-top: 30px;
     font-family: NanumSquareRound;
 font-style: normal;
@@ -18,9 +19,9 @@ font-size: 60px;
 line-height: 24px;
 color: #000000;
 ">{{ room.number }} 호</p>
-        <div style="margin: 0 auto; width: 880px; height: 1500px; background: #FFFFFF;border-radius: 150px; box-shadow: 0px 3px 17px -1px rgba(0, 0, 0, 0.15);">
-            <div>
-                <p style="display:inline-block; font-family: NanumSquareRound;
+    <div style="margin: 0 auto; width: 880px; height: 1500px; background: #FFFFFF;border-radius: 150px; box-shadow: 0px 3px 17px -1px rgba(0, 0, 0, 0.15);">
+        <div>
+            <p style="display:inline-block; font-family: NanumSquareRound;
 font-style: normal;
 font-weight: 800;
 font-size: 50px;
@@ -29,8 +30,8 @@ line-height: 20px;
 text-align: center;
 margin-left: 150px;
 color: #34F0A2;">강의실 정보</p>
-                {% if room.created_string != '수업 없음' %}
-                <p style="float: right; font-family: NanumSquareRound;
+            {% if room.created_string != '수업 없음' %}
+            <p style="float: right; font-family: NanumSquareRound;
 font-style: normal;
 font-weight: bold;
 font-size: 45px;
@@ -39,9 +40,9 @@ text-align: center;
 margin-right: 130px;
 margin-top: 55px;
 color: #000000;">{{ room.created_string }} 후</p>
-                {% endif %}
-            </div>
-            <p style="font-family: NanumSquareRound;
+            {% endif %}
+        </div>
+        <p style="font-family: NanumSquareRound;
 font-style: normal;
 font-weight: normal;
 font-size: 45px;
@@ -53,9 +54,9 @@ text-align: center;
 letter-spacing: -0.015em;
 
 color: #000000;">[{{ room.name }}] 수업</p>
-            <div style="text-align:center; ">
-                <img style="width:840px; height: 1100px;"  src="/static/images/{{ room.number }}.png">
-            </div>
+        <div style="text-align:center; ">
+            <img style="width:840px; height: 1100px;" src="/static/images/{{ room.number }}.png">
         </div>
+    </div>
 </div>
 {% endblock %}
